@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1BEC9976AD80D8297758E1BF /* Pods_mySmackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C459F5A98D39B32E98581C /* Pods_mySmackApp.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		56C459F5A98D39B32E98581C /* Pods_mySmackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mySmackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A574A305289874597FC1A96 /* Pods-mySmackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySmackApp.debug.xcconfig"; path = "Target Support Files/Pods-mySmackApp/Pods-mySmackApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E6D1639A2D8487CD004378EE /* mySmackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySmackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E845DF9F27B3D99A4546DBB2 /* Pods-mySmackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySmackApp.release.xcconfig"; path = "Target Support Files/Pods-mySmackApp/Pods-mySmackApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BEC9976AD80D8297758E1BF /* Pods_mySmackApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07A5FC06A2A6D484884C679F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56C459F5A98D39B32E98581C /* Pods_mySmackApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A163DEFA25BD2C85388123BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A574A305289874597FC1A96 /* Pods-mySmackApp.debug.xcconfig */,
+				E845DF9F27B3D99A4546DBB2 /* Pods-mySmackApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E6D163912D8487CD004378EE = {
 			isa = PBXGroup;
 			children = (
 				E6D1639C2D8487CD004378EE /* mySmackApp */,
 				E6D1639B2D8487CD004378EE /* Products */,
+				A163DEFA25BD2C85388123BC /* Pods */,
+				07A5FC06A2A6D484884C679F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6D163AD2D8487CF004378EE /* Build configuration list for PBXNativeTarget "mySmackApp" */;
 			buildPhases = (
+				B184D89D115763283FAB5594 /* [CP] Check Pods Manifest.lock */,
 				E6D163962D8487CD004378EE /* Sources */,
 				E6D163972D8487CD004378EE /* Frameworks */,
 				E6D163982D8487CD004378EE /* Resources */,
+				D91E896BA85D8DDC4FFB75EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				E6D1639C2D8487CD004378EE /* mySmackApp */,
 			);
 			name = mySmackApp;
-			packageProductDependencies = (
-			);
 			productName = mySmackApp;
 			productReference = E6D1639A2D8487CD004378EE /* mySmackApp.app */;
 			productType = "com.apple.product-type.application";
@@ -95,6 +122,7 @@
 				TargetAttributes = {
 					E6D163992D8487CD004378EE = {
 						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1610;
 					};
 				};
 			};
@@ -127,6 +155,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B184D89D115763283FAB5594 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mySmackApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D91E896BA85D8DDC4FFB75EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mySmackApp/Pods-mySmackApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mySmackApp/Pods-mySmackApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mySmackApp/Pods-mySmackApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E6D163962D8487CD004378EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,9 +210,11 @@
 /* Begin XCBuildConfiguration section */
 		E6D163AE2D8487CF004378EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A574A305289874597FC1A96 /* Pods-mySmackApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -150,8 +222,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -160,6 +232,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.carrington.mySmackApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "mySmackApp/Supporting  Files/mySmackApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -167,9 +241,11 @@
 		};
 		E6D163AF2D8487CF004378EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E845DF9F27B3D99A4546DBB2 /* Pods-mySmackApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -177,8 +253,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -187,6 +263,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.carrington.mySmackApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "mySmackApp/Supporting  Files/mySmackApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
