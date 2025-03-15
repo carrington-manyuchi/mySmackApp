@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BEC9976AD80D8297758E1BF /* Pods_mySmackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C459F5A98D39B32E98581C /* Pods_mySmackApp.framework */; };
+		043CF326A6255197078FB2D3 /* Pods_mySmackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F00891D468FDD6B3C2B9820 /* Pods_mySmackApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		56C459F5A98D39B32E98581C /* Pods_mySmackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mySmackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A574A305289874597FC1A96 /* Pods-mySmackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySmackApp.debug.xcconfig"; path = "Target Support Files/Pods-mySmackApp/Pods-mySmackApp.debug.xcconfig"; sourceTree = "<group>"; };
+		321CA2CB902E63287440CEC1 /* Pods-mySmackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySmackApp.debug.xcconfig"; path = "Target Support Files/Pods-mySmackApp/Pods-mySmackApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4FF228277C4C8E4F858D87D2 /* Pods-mySmackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySmackApp.release.xcconfig"; path = "Target Support Files/Pods-mySmackApp/Pods-mySmackApp.release.xcconfig"; sourceTree = "<group>"; };
+		8F00891D468FDD6B3C2B9820 /* Pods_mySmackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mySmackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D1639A2D8487CD004378EE /* mySmackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySmackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E845DF9F27B3D99A4546DBB2 /* Pods-mySmackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySmackApp.release.xcconfig"; path = "Target Support Files/Pods-mySmackApp/Pods-mySmackApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,17 +43,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BEC9976AD80D8297758E1BF /* Pods_mySmackApp.framework in Frameworks */,
+				043CF326A6255197078FB2D3 /* Pods_mySmackApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07A5FC06A2A6D484884C679F /* Frameworks */ = {
+		06EE304E2EA8CD6D6E29F9C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				56C459F5A98D39B32E98581C /* Pods_mySmackApp.framework */,
+				8F00891D468FDD6B3C2B9820 /* Pods_mySmackApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -61,8 +61,8 @@
 		A163DEFA25BD2C85388123BC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8A574A305289874597FC1A96 /* Pods-mySmackApp.debug.xcconfig */,
-				E845DF9F27B3D99A4546DBB2 /* Pods-mySmackApp.release.xcconfig */,
+				321CA2CB902E63287440CEC1 /* Pods-mySmackApp.debug.xcconfig */,
+				4FF228277C4C8E4F858D87D2 /* Pods-mySmackApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -73,7 +73,7 @@
 				E6D1639C2D8487CD004378EE /* mySmackApp */,
 				E6D1639B2D8487CD004378EE /* Products */,
 				A163DEFA25BD2C85388123BC /* Pods */,
-				07A5FC06A2A6D484884C679F /* Frameworks */,
+				06EE304E2EA8CD6D6E29F9C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,11 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6D163AD2D8487CF004378EE /* Build configuration list for PBXNativeTarget "mySmackApp" */;
 			buildPhases = (
-				B184D89D115763283FAB5594 /* [CP] Check Pods Manifest.lock */,
+				80E967A5531D9183731D1BF3 /* [CP] Check Pods Manifest.lock */,
 				E6D163962D8487CD004378EE /* Sources */,
 				E6D163972D8487CD004378EE /* Frameworks */,
 				E6D163982D8487CD004378EE /* Resources */,
-				D91E896BA85D8DDC4FFB75EF /* [CP] Embed Pods Frameworks */,
+				DECD57396F0077B8E0B14009 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,7 +156,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B184D89D115763283FAB5594 /* [CP] Check Pods Manifest.lock */ = {
+		80E967A5531D9183731D1BF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -178,7 +178,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D91E896BA85D8DDC4FFB75EF /* [CP] Embed Pods Frameworks */ = {
+		DECD57396F0077B8E0B14009 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,13 +210,14 @@
 /* Begin XCBuildConfiguration section */
 		E6D163AE2D8487CF004378EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A574A305289874597FC1A96 /* Pods-mySmackApp.debug.xcconfig */;
+			baseConfigurationReference = 321CA2CB902E63287440CEC1 /* Pods-mySmackApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mySmackApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -241,13 +242,14 @@
 		};
 		E6D163AF2D8487CF004378EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E845DF9F27B3D99A4546DBB2 /* Pods-mySmackApp.release.xcconfig */;
+			baseConfigurationReference = 4FF228277C4C8E4F858D87D2 /* Pods-mySmackApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mySmackApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
