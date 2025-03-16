@@ -8,6 +8,11 @@
 import Foundation
 import Alamofire
 
+struct RegisterResponse: Decodable {
+    let success: Bool
+    let message: String?
+}
+
 class AuthService {
     static let instance = AuthService()
     
@@ -40,7 +45,6 @@ class AuthService {
         }
     }
     
-    
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail = email.lowercased()
         
@@ -53,26 +57,18 @@ class AuthService {
             "password": password
         ]
         
-        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(header)).responseJSON { response in
-            switch response.result {
-            case .success:
-                // Check if status code is 200 OK (or whatever success code you expect)
-                if let statusCode = response.response?.statusCode, statusCode == 200 {
-                    completion(true)
-                } else {
-                    completion(false)
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(header))
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: RegisterResponse.self) { response in
+                switch response.result {
+                case .success(let data):
+                    completion(data.success)
+                case .failure(let error):
+                    let statusCode = response.response?.statusCode
+                    print("Request failed with status code: \(statusCode ?? 0), Error: \(error.localizedDescription)")
                 }
-                
-            case .failure(let error):
-                // Pass the error to the completion handler or log it
-                print("Error registering user: \(error.localizedDescription)")
-                completion(false)
             }
-        }
-        
         
     }
-    
-    
     
 }
