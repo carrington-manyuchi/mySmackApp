@@ -25,3 +25,7 @@ let UNWIND = "unwindToChannel"
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+
+
+//Headers
+let HEADER = ["Content-Type": "application/json; charset=utf-8"]

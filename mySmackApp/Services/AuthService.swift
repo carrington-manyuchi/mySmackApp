@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 struct RegisterResponse: Decodable {
     let success: Bool
@@ -48,27 +49,72 @@ class AuthService {
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail = email.lowercased()
         
-        let header = [
-            "Content-Type": "application/json; charset=utf-8"
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
         ]
+        
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(HEADER))
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: RegisterResponse.self) { response in
+                switch response.result {
+                case .success:
+                    if let statusCode = response.response?.statusCode, statusCode == 200 {
+                        completion(true)
+                    } else {
+                        completion(false)
+                    }
+                    
+                case .failure(let error):
+                    let statusCode = response.response?.statusCode
+                    print("Request failed with status code: \(statusCode ?? 0), Error: \(error.localizedDescription)")
+                    completion(false)
+                }
+            }
+    }
+    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        let lowerCaseEmail = email.lowercased()
         
         let body: [String: Any] = [
             "email": lowerCaseEmail,
             "password": password
         ]
         
-        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(header))
-            .validate(statusCode: 200..<300)
+        AF.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(HEADER))
             .responseDecodable(of: RegisterResponse.self) { response in
-                switch response.result {
-                case .success(let data):
-                    completion(data.success)
-                case .failure(let error):
-                    let statusCode = response.response?.statusCode
-                    print("Request failed with status code: \(statusCode ?? 0), Error: \(error.localizedDescription)")
-                }
-            }
-        
+                           
+                   switch response.result {
+                   case .success:
+                       // Check if status code is 200 OK (or whatever success code you expect)
+                       if let statusCode = response.response?.statusCode, statusCode == 200 {
+                           do {
+                               guard let data = response.data else { return }
+                               let json = try JSON(data: data)
+                               self.userEmail = json["user"].stringValue
+                               self.authToken = json["token"].stringValue
+                               self.isLoggedIn = true
+                               completion(true)
+                           } catch {
+                               print("Error parsing JSON: \(error.localizedDescription)")
+                               completion(false)
+                           }
+                       } else {
+                           completion(false)
+                       }
+                       
+                   case .failure(let error):
+                       // Pass the error to the completion handler or log it
+                       print("Error logging in user: \(error.localizedDescription)")
+                       completion(false)
+                   }
+               }
     }
+    
+    
+    
+    
+    
+    
     
 }

@@ -46,7 +46,14 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>SwiftJSON.xcscheme</key>
+		<key>SwiftyJSON-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

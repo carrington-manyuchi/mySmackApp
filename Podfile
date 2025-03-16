@@ -8,7 +8,7 @@ target 'mySmackApp' do
   # Pods for mySmackApp
   
   pod 'Alamofire'
-  pod 'SwiftJSON'
+  pod 'SwiftyJSON'
   pod 'Socket.IO-Client-Swift'
 
 end
