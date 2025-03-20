@@ -113,6 +113,58 @@ class AuthService {
     
     
     
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, password completion: @escaping CompletionHandler) {
+        let lowercasedEmail = email.lowercased()
+        
+        let body: [String: Any] = [
+            "email": lowercasedEmail,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor
+        ]
+        
+        let header = [
+            "Authorization": "Bearer \(AuthService.instance.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        AF.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(header))
+            .responseDecodable(of: RegisterResponse.self) { response in
+                
+                switch response.result {
+                case .success(let registerResponse):
+                   
+                    if let data = response.data {
+                        do {
+                            let json = try JSON(data: data)
+                            let id = json["id"].stringValue
+                            let color = json["avatarColor"].stringValue
+                            let avatarName = json["avatarName"].stringValue
+                            let email = json["email"].stringValue
+                            let name = json["name"].stringValue
+                            
+                            print("User Created: \(name), ID: \(id), Email: \(email)")
+                            
+                            UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                            
+                            
+                        } catch {
+                            print("JSON Parsing Error: \(error.localizedDescription)")
+                        }
+                    }
+                    
+                    print("Response: \(registerResponse)")
+                    completion(true)
+                    
+                case .failure(let error):
+                    completion(false)
+                    debugPrint(error.localizedDescription)
+                }
+            }
+    }
+
+    
+    
+    
     
     
     
